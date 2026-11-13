@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "sync-swagger-on-route-change",
+      "trigger": "PostFileSave",
+      "matcher": "backend/src/routes/.*\\.ts$",
+      "action": {
+        "type": "agent",
+        "prompt": "Se guardó un archivo de rutas en backend/src/routes/. Verifica que cada ruta definida tenga su anotación @openapi (tags, summary, parámetros, requestBody y respuestas 2xx/400/404/409/422 según aplique) y que coincida con el comportamiento real del controlador. Revisa también que los esquemas referenciados existan en backend/src/config/swagger.ts. Si falta o está desactualizada alguna anotación, actualízala siguiendo .kiro/steering/api-standards.md y resume los cambios."
+      }
+    }
+  ]
+}

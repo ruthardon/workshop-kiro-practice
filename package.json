@@ -1,0 +1,20 @@
+{
+  "name": "claimshield",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ClaimShield - gestión de siniestros (workshop). Modo Cero-Instalación con SQLite o Docker + PostgreSQL.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "setup": "node scripts/start.mjs --setup-only",
+    "dev": "node scripts/start.mjs --dev",
+    "db:reset": "npm --prefix backend run db:reset",
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "test": "npm --prefix backend test"
+  }
+}

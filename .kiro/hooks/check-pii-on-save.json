@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "check-pii-on-save",
+      "trigger": "PostFileSave",
+      "matcher": "backend/src/.*\\.ts$",
+      "action": {
+        "type": "agent",
+        "prompt": "Se guardó un archivo en backend/src/. Revisa que no se hayan introducido console.log, console.error o llamadas a logger que impriman datos sensibles (national_id, phone, email, policy_number, holder_name u objetos completos de póliza/request). Si encuentras alguno, propón y aplica un reemplazo seguro que registre solo ids internos o los últimos 4 caracteres, según .kiro/steering/security-pii.md. Si no hay hallazgos, responde 'Sin hallazgos de PII'."
+      }
+    }
+  ]
+}

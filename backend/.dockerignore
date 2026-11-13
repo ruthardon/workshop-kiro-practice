@@ -1,0 +1,8 @@
+node_modules
+dist
+coverage
+data
+scripts
+*.db
+*.db-wal
+*.db-shm
