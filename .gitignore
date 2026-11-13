@@ -10,3 +10,4 @@ backend/data/
 *.db-wal
 *.db-shm
 *.sqlite
+.agents
